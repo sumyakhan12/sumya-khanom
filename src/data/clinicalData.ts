@@ -5,6 +5,7 @@ import {
   MedicationDose,
   Prescription,
   VitalMetric,
+  WellnessTip,
 } from '../types';
 
 export const DOCTORS: Doctor[] = [
@@ -562,3 +563,169 @@ export const UPCOMING_DATES = [
   { iso: '2026-11-25', dayEn: 'Wed', dayBn: 'বুধ', numEn: '25', numBn: '২৫', monthEn: 'Nov', monthBn: 'নভে', labelEn: 'Wed, 25 Nov', labelBn: 'বুধ, ২৫ নভে' },
   { iso: '2026-11-26', dayEn: 'Thu', dayBn: 'বৃহঃ', numEn: '26', numBn: '২৬', monthEn: 'Nov', monthBn: 'নভে', labelEn: 'Thu, 26 Nov', labelBn: 'বৃহঃ, ২৬ নভে' },
 ];
+
+export const WELLNESS_TIPS: WellnessTip[] = [
+  {
+    id: 'tip-bp-balance',
+    category: 'vitals',
+    relatedVitalId: 'vital-bp',
+    vitalCondition: 'optimal',
+    topicLabel: { en: 'Blood Pressure Care', bn: 'রক্তচাপ সুরক্ষা' },
+    title: {
+      en: 'Keep sodium gentle and potassium-rich greens on your plate',
+      bn: 'খাবারে অতিরিক্ত লবণ কমিয়ে পটাশিয়ামসমৃদ্ধ শাকসবজি রাখুন',
+    },
+    body: {
+      en: 'Your resting blood pressure is trending steadily within target. Sustaining under 5 g of added salt daily and pairing meals with leafy greens, lentils, or a banana helps blood vessels stay relaxed.',
+      bn: 'আপনার বিশ্রামকালীন রক্তচাপ আদর্শ সীমায় স্থিতিশীল আছে। দৈনিক অতিরিক্ত লবণ ৫ গ্রামের নিচে রাখা এবং শাকসবজি, ডাল বা কলা খাওয়া রক্তনালী স্বাভাবিক রাখতে সহায়তা করে।',
+    },
+    actionStep: {
+      en: 'Skip adding table salt to lunch today and season with fresh lemon or herbs instead.',
+      bn: 'আজকের দুপুরের খাবারে আলগা লবণের বদলে লেবুর রস বা ধনেপাতা ব্যবহার করুন।',
+    },
+    durationLabel: { en: 'Daily meal habit', bn: 'দৈনিক খাদ্যাভ্যাস' },
+    sourceNote: { en: 'Cardiometabolic guidance', bn: 'হৃদস্বাস্থ্য নির্দেশনা' },
+  },
+  {
+    id: 'tip-bp-elevated',
+    category: 'vitals',
+    relatedVitalId: 'vital-bp',
+    vitalCondition: 'elevated',
+    topicLabel: { en: 'Blood Pressure Check-In', bn: 'রক্তচাপ পর্যবেক্ষণ' },
+    title: {
+      en: 'Pause for five quiet minutes before re-checking blood pressure',
+      bn: 'রক্তচাপ পুনরায় মাপার আগে পাঁচ মিনিট শান্ত হয়ে বসুন',
+    },
+    body: {
+      en: 'Your latest blood pressure reading sits above the usual resting target. Sit with your back supported, feet flat on the floor, and arm at heart level before taking a follow-up reading.',
+      bn: 'আপনার সর্বশেষ রক্তচাপ স্বাভাবিক লক্ষ্যমাত্রার চেয়ে কিছুটা বেশি। পিঠ সোজা রেখে, পা মেঝেতে সমান করে এবং হাত হৃদপিণ্ডের সমান্তরালে রেখে ৫ মিনিট পর পুনরায় পরিমাপ করুন।',
+    },
+    actionStep: {
+      en: 'Take a calm evening reading after resting and note any headache or dizziness.',
+      bn: 'বিশ্রামের পর সন্ধ্যায় আরেকবার রক্তচাপ মাপুন এবং কোনো মাথাব্যথা থাকলে নোট রাখুন।',
+    },
+    durationLabel: { en: '5 min check-in', bn: '৫ মিনিটের অভ্যাস' },
+    sourceNote: { en: 'Hypertension care', bn: 'উচ্চ রক্তচাপ ব্যবস্থাপনা' },
+  },
+  {
+    id: 'tip-glucose-walk',
+    category: 'vitals',
+    relatedVitalId: 'vital-glucose',
+    vitalCondition: 'any',
+    topicLabel: { en: 'Glycemic Balance', bn: 'রক্তের শর্করা নিয়ন্ত্রণ' },
+    title: {
+      en: 'A 15-minute stroll after dinner smooths overnight glucose',
+      bn: 'রাতের খাবারের পর ১৫ মিনিট হাঁটলে সকালের শর্করা নিয়ন্ত্রণে থাকে',
+    },
+    body: {
+      en: 'Light movement within 30 minutes of your evening meal helps skeletal muscles absorb glucose gently without sharp spikes, supporting a calmer morning fasting reading.',
+      bn: 'রাতের খাবারের ৩০ মিনিটের মধ্যে হালকা হাঁটাহাঁটি পেশীতে শর্করা শোষণে সাহায্য করে, ফলে খালি পেটে সকালের ব্লাড সুগার স্থিতিশীল থাকে।',
+    },
+    actionStep: {
+      en: 'Walk at an easy conversational pace for 15 minutes after dinner tonight.',
+      bn: 'আজ রাতের খাবারের পর স্বাভাবিক গতিতে ১৫ মিনিট হাঁটুন।',
+    },
+    durationLabel: { en: '15 min evening walk', bn: '১৫ মিনিট হাঁটা' },
+    sourceNote: { en: 'Metabolic wellness', bn: 'বিপাকীয় সুস্থতা' },
+  },
+  {
+    id: 'tip-hr-pacing',
+    category: 'vitals',
+    relatedVitalId: 'vital-hr',
+    vitalCondition: 'any',
+    topicLabel: { en: 'Heart Rate Recovery', bn: 'হৃদস্পন্দন সুস্থতা' },
+    title: {
+      en: 'Slow exhalations nudge resting heart rate into a calmer zone',
+      bn: 'ধীরে শ্বাস ছাড়ার অভ্যাস বিশ্রামকালীন হৃদস্পন্দন শান্ত রাখে',
+    },
+    body: {
+      en: 'Lengthening your exhale slightly beyond your inhale activates the parasympathetic nervous system, gently easing cardiovascular workload between busy parts of the day.',
+      bn: 'শ্বাস নেওয়ার চেয়ে সামান্য বেশি সময় ধরে ধীরে শ্বাস ছাড়লে স্নায়ুতন্ত্র শান্ত হয় এবং হৃদপিণ্ডের ওপর চাপ কমে।',
+    },
+    actionStep: {
+      en: 'Try 6 cycles of inhaling for 4 seconds and exhaling slowly for 6 seconds.',
+      bn: '৪ সেকেন্ড শ্বাস নিয়ে ৬ সেকেন্ডে ধীরে শ্বাস ছাড়ার অনুশীলন ৬ বার করুন।',
+    },
+    durationLabel: { en: '2 min breathing reset', bn: '২ মিনিটের শ্বাসচর্চা' },
+    sourceNote: { en: 'Cardiovascular rhythm', bn: 'হৃদযন্ত্রের ছন্দ' },
+  },
+  {
+    id: 'tip-spo2-posture',
+    category: 'vitals',
+    relatedVitalId: 'vital-spo2',
+    vitalCondition: 'any',
+    topicLabel: { en: 'Respiratory Comfort', bn: 'শ্বাসপ্রশ্বাসের যত্ন' },
+    title: {
+      en: 'Open-chest posture and fresh airflow support full lung expansion',
+      bn: 'সঠিক ভঙ্গি ও মুক্ত বাতাস ফুসফুসের পূর্ণ কার্যকারিতা বজায় রাখে',
+    },
+    body: {
+      en: 'Long stretches hunched over a desk compress the diaphragm and lead to shallow breathing. Standing upright and opening a window for brief cross-ventilation refreshes oxygen intake.',
+      bn: 'দীর্ঘক্ষণ ঝুঁকে কাজ করলে শ্বাসপ্রশ্বাস অগভীর হয়ে যায়। প্রতি ঘণ্টায় সোজা হয়ে দাঁড়িয়ে গভীর শ্বাস নিলে অক্সিজেন গ্রহণ ভালো হয়।',
+    },
+    actionStep: {
+      en: 'Roll your shoulders back and take five slow belly breaths near natural airflow.',
+      bn: 'কাঁধ সোজা করে খোলা জানালার পাশে ৫ বার গভীর শ্বাস নিন।',
+    },
+    durationLabel: { en: '1 min posture break', bn: '১ মিনিটের বিরতি' },
+    sourceNote: { en: 'Pulmonary care', bn: 'শ্বাসতন্ত্রের যত্ন' },
+  },
+  {
+    id: 'tip-general-sunlight',
+    category: 'general',
+    topicLabel: { en: 'Preventive Care', bn: 'প্রতিরোধমূলক যত্ন' },
+    title: {
+      en: 'Catch 15 minutes of morning daylight for Vitamin D and sleep rhythm',
+      bn: 'ভিটামিন ডি ও ভালো ঘুমের জন্য সকালে ১৫ মিনিট রোদে থাকুন',
+    },
+    body: {
+      en: 'Early natural light anchors your circadian clock so melatonin rises naturally at night, while supporting healthy Vitamin D synthesis alongside your prescribed supplementation.',
+      bn: 'সকালের প্রাকৃতিক আলো শরীরের ঘুমের ছন্দ ঠিক রাখে এবং ওষুধের পাশাপাশি স্বাভাবিক ভিটামিন ডি তৈরিতে সহায়ক ভূমিকা পালন করে।',
+    },
+    actionStep: {
+      en: 'Step onto a balcony or take a short walk outdoors before 10:00 AM.',
+      bn: 'সকাল ১০টার আগে বারান্দায় বা খোলা জায়গায় কিছুক্ষণ হাঁটুন।',
+    },
+    durationLabel: { en: '15 min morning habit', bn: '১৫ মিনিট সকালের অভ্যাস' },
+    sourceNote: { en: 'General health maintenance', bn: 'সার্বিক স্বাস্থ্য রক্ষা' },
+  },
+  {
+    id: 'tip-general-hydration',
+    category: 'general',
+    topicLabel: { en: 'Daily Hydration', bn: 'দৈনিক পানিশূন্যতা রোধ' },
+    title: {
+      en: 'Pace water intake evenly from morning through early evening',
+      bn: 'সকাল থেকে সন্ধ্যা পর্যন্ত নিয়ম করে পর্যাপ্ত পানি পান করুন',
+    },
+    body: {
+      en: 'Steady hydration supports circulation, kidney filtration, and midday focus. Front-loading most of your fluids before 8:00 PM also helps preserve uninterrupted overnight sleep.',
+      bn: 'নিয়মিত পানি পান রক্ত সঞ্চালন ও কিডনির কার্যকারিতা ভালো রাখে। রাত ৮টার আগে অধিকাংশ পানি পান করলে রাতের ঘুম নিরবচ্ছিন্ন হয়।',
+    },
+    actionStep: {
+      en: 'Drink one full glass of water right before lunch and another mid-afternoon.',
+      bn: 'দুপুরের খাবারের আগে এবং বিকালে এক গ্লাস করে বিশুদ্ধ পানি পান করুন।',
+    },
+    durationLabel: { en: 'All-day rhythm', bn: 'সারাদিনের অভ্যাস' },
+    sourceNote: { en: 'General health maintenance', bn: 'সার্বিক স্বাস্থ্য রক্ষা' },
+  },
+  {
+    id: 'tip-general-sleep',
+    category: 'general',
+    topicLabel: { en: 'Restorative Sleep', bn: 'পর্যাপ্ত ও প্রশান্ত ঘুম' },
+    title: {
+      en: 'Dim bright screens 45 minutes before bed to protect deep sleep',
+      bn: 'গভীর ঘুমের জন্য ঘুমানোর ৪৫ মিনিট আগে মোবাইল ও স্ক্রিন থেকে দূরে থাকুন',
+    },
+    body: {
+      en: 'Consistent 7–8 hour sleep lowers morning cortisol, stabilizes blood pressure, and improves insulin sensitivity throughout the following day.',
+      bn: 'প্রতিদিন ৭–৮ ঘণ্টা নিরবচ্ছিন্ন ঘুম সকালের স্ট্রেস হরমোন কমায়, রক্তচাপ স্থিতিশীল রাখে এবং দিনের কর্মক্ষমতা বাড়ায়।',
+    },
+    actionStep: {
+      en: 'Set your phone to warm night mode and switch to quiet reading after 10:15 PM.',
+      bn: 'রাত ১০:১৫-এর পর ফোন সাইলেন্ট করে হালকা বই পড়া বা বিশ্রাম নিন।',
+    },
+    durationLabel: { en: 'Evening wind-down', bn: 'রাতের প্রস্তুতি' },
+    sourceNote: { en: 'General health maintenance', bn: 'সার্বিক স্বাস্থ্য রক্ষা' },
+  },
+];
+

@@ -29,6 +29,7 @@ import { UI_COPY, formatBDT, pick, toLocaleDigits } from '../i18n/translations';
 import { Sparkline } from './Sparkline';
 import { ProviderAvailabilityBar } from './ProviderAvailabilityBar';
 import { DoctorAvatar } from './DoctorAvatar';
+import { DailyWellnessTips } from './DailyWellnessTips';
 
 const HERO_DOCTOR_IMAGE = '/src/assets/images/hero_mediora_doctor_1795262499376.jpg';
 
@@ -106,6 +107,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
 
   const [logModalOpen, setLogModalOpen] = useState(false);
   const [selectedVitalId, setSelectedVitalId] = useState<string>(vitals[0]?.id ?? 'vital-hr');
+  const [lastLoggedVitalId, setLastLoggedVitalId] = useState<string | null>(null);
   const [readingInput, setReadingInput] = useState('');
   const [readingError, setReadingError] = useState('');
 
@@ -144,6 +146,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
     }
 
     onLogVital(selectedVitalId, trimmed, parsed);
+    setLastLoggedVitalId(selectedVitalId);
     setLogModalOpen(false);
     setReadingError('');
   };
@@ -488,6 +491,15 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
           })}
         </div>
       </section>
+
+      {/* Daily Wellness Tips — Soft Sage Curated & Rotatable Guidance */}
+      <DailyWellnessTips
+        lang={lang}
+        vitals={vitals}
+        lastLoggedVitalId={lastLoggedVitalId}
+        onLogVitalRequest={(vitalId) => handleOpenLog(vitalId)}
+        onNavigate={onNavigate}
+      />
 
       {/* Soft Sage Rhythm Section: Specialist Availability (8 cols) + Medication Schedule (4 cols) */}
       <section className="rounded-[28px] bg-[#E8EFE8] border border-[#D8E3D7] p-5 sm:p-7 lg:p-8">

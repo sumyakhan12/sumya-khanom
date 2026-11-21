@@ -190,4 +190,24 @@ export const UI_COPY = {
     save: { en: 'Save Reading', bn: 'সংরক্ষণ করুন' },
     cancel: { en: 'Cancel', bn: 'বাতিল' },
   },
+  wellnessTips: {
+    heading: { en: 'Daily Wellness Tips', bn: 'দৈনিক সুস্থতার পরামর্শ' },
+    subtitle: {
+      en: 'Curated guidance tuned to your logged vitals and everyday preventive care.',
+      bn: 'আপনার লিপিবদ্ধ শারীরিক পরিমাপ ও দৈনন্দিন স্বাস্থ্য সুরক্ষার সাথে সামঞ্জস্যপূর্ণ পরামর্শ।',
+    },
+    filterAll: { en: 'All Tips', bn: 'সব পরামর্শ' },
+    filterVitals: { en: 'For Your Vitals', bn: 'পরিমাপ ভিত্তিক' },
+    filterGeneral: { en: 'General Care', bn: 'সাধারণ যত্ন' },
+    matchedTo: { en: 'Matched to your', bn: 'সামঞ্জস্যপূর্ণ:' },
+    generalMaintenance: { en: 'General Health Maintenance', bn: 'সার্বিক স্বাস্থ্য সুরক্ষা' },
+    tryTodayLabel: { en: 'Simple step for today', bn: 'আজকের সহজ পদক্ষেপ' },
+    markPracticed: { en: 'Mark as practiced', bn: 'অনুশীলন করেছি' },
+    practicedToday: { en: 'Practiced today', bn: 'আজ অনুশীলন সম্পন্ন' },
+    nextTip: { en: 'Next tip', bn: 'পরবর্তী পরামর্শ' },
+    prevTip: { en: 'Previous tip', bn: 'পূর্ববর্তী পরামর্শ' },
+    updateVitalCta: { en: 'Log updated reading', bn: 'নতুন পরিমাপ দিন' },
+    consultDoctorCta: { en: 'Discuss with a doctor', bn: 'বিশেষজ্ঞের পরামর্শ নিন' },
+  },
 } as const;
+

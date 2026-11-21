@@ -126,3 +126,21 @@ export interface Prescription {
     instruction: BilingualText;
   }[];
 }
+
+export type WellnessTipCategory = 'vitals' | 'general';
+
+export interface WellnessTip {
+  id: string;
+  category: WellnessTipCategory;
+  /** Matches VitalMetric.id when tied to a specific logged vital */
+  relatedVitalId?: 'vital-hr' | 'vital-bp' | 'vital-glucose' | 'vital-spo2';
+  /** 'elevated' tips surface first when the linked vital is outside its target range */
+  vitalCondition?: 'any' | 'optimal' | 'elevated';
+  topicLabel: BilingualText;
+  title: BilingualText;
+  body: BilingualText;
+  actionStep: BilingualText;
+  durationLabel: BilingualText;
+  sourceNote: BilingualText;
+}
+
